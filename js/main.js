@@ -21,3 +21,48 @@ const images = [
         text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
     }
 ];
+
+//mi creo il collegamento con i pulsanti del dom
+
+let btnNext= document.getElementById("next");
+let btnPrevious= document.getElementById("prev");
+
+for(let i=0; i<images.length; i++){
+let j=1;
+ //al click del pulsante next collego un evento
+    btnNext.addEventListener("click", function(){ 
+        console.log(i) 
+        console.log(j)
+        
+        if(i<j && j<5){
+            document.getElementById("img_dom").innerHTML= `<img src="${images[j].image}" alt="" id="img_dom"></img><br>
+            <div class="position-absolute bottom-50 text-right color-white padding-text">
+                    <h2>${images[j].title}</h2>
+                    <h5>${images[j].text}</h5>
+                </div>`
+            j++
+       }
+       else if(j==5){
+            document.getElementById("img_dom").innerHTML= `<img src="${images[0].image}" alt="" id="img_dom"></img><br>
+            <div class="position-absolute bottom-50 text-right color-white padding-text">
+                    <h2>${images[0].title}</h2>
+                    <h5>${images[0].text}</h5>
+                </div>`
+           j=1
+       }
+   
+    })
+   
+}
+
+
+   
+
+
+btnPrevious.addEventListener("click", function(){
+
+   
+})
+
+
+
