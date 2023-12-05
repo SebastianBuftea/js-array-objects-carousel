@@ -27,42 +27,37 @@ const images = [
 let btnNext= document.getElementById("next");
 let btnPrevious= document.getElementById("prev");
 
-for(let i=0; i<images.length; i++){
-let j=1;
+ i=1
  //al click del pulsante next collego un evento
     btnNext.addEventListener("click", function(){ 
-        console.log(i) 
-        console.log(j)
-        
-        if(i<j && j<5){
-            document.getElementById("img_dom").innerHTML= `<img src="${images[j].image}" alt="" id="img_dom"></img><br>
+        if(i<5){
+              
+            document.getElementById("img_dom").innerHTML= `<img src="${images[i].image}" alt="" id="img_dom"></img><br>
             <div class="position-absolute bottom-50 text-right color-white padding-text">
-                    <h2>${images[j].title}</h2>
-                    <h5>${images[j].text}</h5>
-                </div>`
-            j++
-       }
-       else if(j==5){
+            <h2>${images[i].title}</h2>
+            <h5>${images[i].text}</h5>
+            </div>`
+                        
+            i++
+        }
+        else{
             document.getElementById("img_dom").innerHTML= `<img src="${images[0].image}" alt="" id="img_dom"></img><br>
             <div class="position-absolute bottom-50 text-right color-white padding-text">
-                    <h2>${images[0].title}</h2>
-                    <h5>${images[0].text}</h5>
-                </div>`
-           j=1
-       }
-   
-    })
-   
-}
-
+            <h2>${images[0].title}</h2>
+            <h5>${images[0].text}</h5>
+            </div>`
+            i=1
+        }
+                
+    }) 
 
    
 
 
-btnPrevious.addEventListener("click", function(){
 
-   
-})
+
+
+
 
 
 
